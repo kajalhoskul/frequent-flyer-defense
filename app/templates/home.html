@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+  <h1>Welcome to AeroPoints</h1>
+  <p class="muted">Manage your miles, redeem rewards, and update your account.</p>
+  {% if account %}
+    <p><a class="link" href="/account">Go to My Account &rarr;</a></p>
+  {% else %}
+    <p><a class="link" href="/login">Log in</a> &middot; <a class="link" href="/account-recovery">Forgot your password or lost MFA device?</a></p>
+  {% endif %}
+</div>
+{% endblock %}

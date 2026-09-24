@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{% block title %}AeroPoints{% endblock %}</title>
+<style>
+  :root { --ink: #0b1f33; --blue: #0a5fb4; --cream: #f5f8fb; --line: #d7e2ec; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--cream); color: var(--ink); font-family: system-ui, -apple-system, sans-serif; }
+  header { display: flex; justify-content: space-between; align-items: center; padding: 18px 40px; background: var(--blue); color: white; }
+  .wordmark { font-size: 20px; font-weight: 700; letter-spacing: 0.5px; }
+  nav a { margin-left: 20px; color: white; text-decoration: none; font-size: 14px; }
+  nav a:hover { text-decoration: underline; }
+  main { max-width: 600px; margin: 0 auto; padding: 48px 24px; }
+  .card { background: white; border: 1px solid var(--line); border-radius: 10px; padding: 28px; }
+  h1 { font-size: 22px; margin-top: 0; }
+  label { display: block; font-size: 13px; font-weight: 600; margin: 16px 0 4px; }
+  input { width: 100%; padding: 10px; border: 1px solid var(--line); border-radius: 6px; font-family: inherit; font-size: 14px; }
+  button { margin-top: 22px; padding: 11px 22px; background: var(--blue); color: white; border: none; border-radius: 6px; font-size: 14px; font-weight: 600; cursor: pointer; }
+  .error { color: #b3261e; font-size: 13px; background: #fdecea; padding: 10px; border-radius: 6px; }
+  .message { color: #0a5fb4; font-size: 13px; background: #eaf2fb; padding: 10px; border-radius: 6px; margin-bottom: 16px; }
+  .points { font-size: 34px; font-weight: 700; color: var(--blue); }
+  .muted { color: #5b7086; font-size: 13px; }
+  .link { color: var(--blue); font-size: 13px; }
+  .actions { display: flex; flex-direction: column; gap: 24px; margin-top: 24px; }
+  .action-block { border-top: 1px solid var(--line); padding-top: 18px; }
+</style>
+</head>
+<body>
+<header>
+  <div class="wordmark">AeroPoints</div>
+  <nav>
+    <a href="/">Home</a>
+    {% if account %}<a href="/account">My Account</a><a href="/logout">Log out</a>
+    {% else %}<a href="/login">Log in</a>{% endif %}
+  </nav>
+</header>
+<main>{% block content %}{% endblock %}</main>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+  <h1>My Account -- {{ account.ff_number }}</h1>
+  {% if message %}<p class="message">{{ message }}</p>{% endif %}
+  <div class="muted">Miles Balance</div>
+  <div class="points">{{ "{:,}".format(account.points_balance) }}</div>
+
+  <div class="actions">
+    <div class="action-block">
+      <h3>Redeem Points</h3>
+      <form method="post" action="/redeem-points">
+        <label>Points to redeem</label>
+        <input type="number" name="amount" required>
+        <label>Delivery address for reward</label>
+        <input type="text" name="delivery_address" required>
+        <button type="submit">Redeem</button>
+      </form>
+    </div>
+    <div class="action-block">
+      <h3>Add Payment Method</h3>
+      <form method="post" action="/add-payment-method">
+        <label>Card ending in</label>
+        <input type="text" name="card_last4" maxlength="4" required>
+        <button type="submit">Add Card</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+  <h1>Log In</h1>
+  {% if error %}<p class="error">{{ error }}</p>{% endif %}
+  <form method="post" action="/login">
+    <label>Frequent Flyer Number</label>
+    <input type="text" name="ff_number" required>
+    <label>Password</label>
+    <input type="password" name="password" required>
+    <button type="submit">Log In</button>
+  </form>
+  <p style="margin-top:18px;"><a class="link" href="/account-recovery">Forgot your password or lost MFA device?</a></p>
+</div>
+{% endblock %}

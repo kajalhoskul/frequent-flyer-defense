@@ -1,0 +1,9 @@
+{
+  "accounts": [
+    {"ff_number": "AP100234", "email": "amara.chen@example.com", "password": "BlueSky!482", "points_balance": 142000},
+    {"ff_number": "AP100567", "email": "d.oyelaran@example.com", "password": "Voyager#77", "points_balance": 58200},
+    {"ff_number": "AP100812", "email": "r.fontaine@example.com", "password": "Miles4Life$", "points_balance": 310500},
+    {"ff_number": "AP100933", "email": "k.novak@example.com", "password": "JetSet2024!", "points_balance": 21000},
+    {"ff_number": "AP101045", "email": "s.iyer@example.com", "password": "Runway88#", "points_balance": 97500}
+  ]
+}
